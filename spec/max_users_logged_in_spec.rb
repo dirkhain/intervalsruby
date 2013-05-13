@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Interval Sort" do
+describe "Interval Sort and Overlap calculation" do
 
   attr_reader :muli
 
@@ -20,7 +20,7 @@ describe "Interval Sort" do
     @interval12 = Interval.new -1, 12
   end
 
-  describe "sort 2 intervals" do
+  describe "Sort intervals" do
     it "should return greater" do
       intervalSort(@interval2, @interval1).should eql 1
     end
@@ -32,13 +32,10 @@ describe "Interval Sort" do
     end
   end
 
-  describe "run with only one value" do
-    it "should return a help message" do
+  describe "Calculate overlaps" do
+    it "should gracefully handle a one element list" do
       @muli.maxSystemUsage([@interval1]).should eql 1
     end
-  end
-
-  describe "functional tests" do
     it "should return 3 as max usage" do
       @muli.maxSystemUsage([@interval4, @interval5, @interval6, @interval7]).should eql 3
     end

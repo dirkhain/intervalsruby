@@ -1,5 +1,4 @@
 require "rbtree"
-
 require_relative 'interval'
 
 class MaxUsersLoggedIn
