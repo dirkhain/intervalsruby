@@ -29,12 +29,8 @@ describe "Interval Object" do
     it "returns the start of the interval" do
       @interval.start.should eql 1
     end
-  end
-
-  describe "@start=" do
-    it "should set the interval start" do
-      @interval.start=10
-      @interval.start.should eql 10
+    it "throws a NoMethodError" do
+      lambda {@interval.start=10}.should raise_exception NoMethodError
     end
   end
 

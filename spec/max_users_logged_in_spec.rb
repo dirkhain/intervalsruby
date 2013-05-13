@@ -5,8 +5,7 @@ describe "Interval Sort" do
   before :each do
     @interval1 = Interval.new 1, 2
     @interval2 = Interval.new 1, 3
-    @interval3 = Interval.new 3, 4
-    @interval4 = Interval.new 1, 2
+    @interval3 = Interval.new 1, 2
   end
 
   describe "sort 2 intervals" do
@@ -17,8 +16,16 @@ describe "Interval Sort" do
        intervalSort(@interval1, @interval2).should eql -1
     end
     it 'should return equals' do
-       intervalSort(@interval1, @interval4).should eql 0
+       intervalSort(@interval1, @interval3).should eql 0
     end
   end
+
+  describe "run with only one value" do
+    it "should return a help message" do
+      muli = MaxUsersLoggedIn.new
+#      muli.maxSystemUsage([@interval1]).should eql nil
+    end
+  end
+
 
 end
